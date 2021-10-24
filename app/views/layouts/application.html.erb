@@ -8,7 +8,34 @@
    </head>
    
    <body>
+      
+   <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav class='nav navbar-nav navbar-left' >
+        <div class="b">Bookers2</div>
+      </nav>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%= link_to "Home", user_path(current_user.id) %></a></li>
+            <li><%= link_to "Users", "/users" %></a></li>
+            <li><%= link_to "Books", "/books" %></a></li>
+            <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+
+          <% else %>
+            <li><%= link_to"Home",root_path %></li>
+            <li><%= link_to"About",home_about_path %></li>
+            <li><%= link_to"Sign up", "/users/sign_up" %></li>
+            <li><%= link_to"login", "/users/sign_in" %></li>
+          <% end %>
+        </<ul>
+      </nav>
+    </div>
+  </header>
+       
     <%= yield %>
    </body> 
-  
+   <footer>
+     <p> CopyRight Infratop.inc</p>
+   </footer>
 </html>
