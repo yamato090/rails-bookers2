@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
    def index
+      @books = Book.all
+      @book = Book.new
    end
 
    def show
+      @books = current_user.posts.all
    end
 
    def edit

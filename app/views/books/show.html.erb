@@ -1,1 +1,35 @@
-<h1>bookssh</h1>
+<p id="notice"><%= notice %></p>
+   <% if flash[:complete] %>
+     <div class="flash">
+     <%= flash[:complete] %>
+   </div>
+   <% end %>
+ <%= form_for(@book) do |f| %>
+   <% if @book.errors.any? %>
+   <div class="error">
+     <h3><%= @book.errors.count %> errors prohibited this book from being saved:</h3>
+       <ul>
+         <% @book.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+         <% end %>
+       </ul>
+   </div>
+   <% end %>
+ <div class="container">
+   <div class="row">
+     <div class="col-lg-4">
+     <main>
+       <h2>New book</h2>
+         <div class="form-title">Title</div>
+         <%= f.text_field :title %>
+       <div class="form-body">Opinion</div>
+         <%= f.text_area :opinion %><br>
+       <div class="upload">
+         <%= f.submit " Create Book" %>
+       </div>
+     </main>
+   </div>
+   </div>
+ </div>
+ <% end %>
+ <% end %> 

@@ -7,29 +7,28 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
    </head>
-   <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <nav class='nav navbar-nav navbar-left' >
-        <div class="b">Bookers2</div>
-      </nav>
-      <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li><%= link_to "Home", user_path(current_user.id) %></li>
-            <li><%= link_to "Users", "/users" %></li>
-            <li><%= link_to "Books", "/books" %></li>
-            <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to"Home",root_path %></li>
-            <li><%= link_to"About",home_about_path %></li>
-            <li><%= link_to"Sign up", "/users/sign_up" %></li>
-            <li><%= link_to"login", "/users/sign_in" %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
-   </header>
-    <body>
+<body>
+   <div class="container">
+     <nav class="navbar navbar-expand-md navbar-dark">
+       <div class="nav navbar-left">
+         <h3><p class="text-white">Bookers</p></h3>
+       </div>
+       <ul class="nav navbar-nav navbar-right">
+         <% if user_signed_in? %>
+           <li><%= link_to "Home", users_path(@user) %></li>
+           <li><%= link_to "User", users_path %></li>
+           <li><%= link_to "Books", books_path %></li>
+           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+         <% else %>
+           <li><%= link_to "Home", "/" %></li>
+           <li><%= link_to "About", home_about_path %></li>
+           <li><%= link_to "Sign up", new_user_registration_path %></li>
+           <li><%= link_to "Login", new_user_session_path %></li>
+         <% end %>
+           <p class="notice"><%= notice %></p>
+           <p class="alert"><%= alert %></p>
+       </ul>
+     </nav>
     <%= yield %>
     </body>
    <footer>
