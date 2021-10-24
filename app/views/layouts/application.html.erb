@@ -4,7 +4,8 @@
     <title>Bookers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-  
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
    </head>
    <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
@@ -18,7 +19,6 @@
             <li><%= link_to "Users", "/users" %></li>
             <li><%= link_to "Books", "/books" %></li>
             <li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
-
           <% else %>
             <li><%= link_to"Home",root_path %></li>
             <li><%= link_to"About",home_about_path %></li>
@@ -28,10 +28,10 @@
         </ul>
       </nav>
     </div>
-  </header>
-    <body> 
+   </header>
+    <body>
     <%= yield %>
-    </body> 
+    </body>
    <footer>
      <p> CopyRight Infratop.inc</p>
    </footer>
