@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user! #追記することで、ログインしていない場合はログイン画面に遷移する。
   before_action :configure_permitted_parameters, if: :devise_controller? #deviseコントローラが動いたら、configure_permitted_parametersを処理する。
+  #before_action :authenticate_user!# ログイン済ユーザーのみにアクセスを許可する
 
   def after_sign_in_path_for(resource)
    	  user_path(resource)
