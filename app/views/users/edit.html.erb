@@ -1,13 +1,12 @@
-<div class="box">
-<h2>User   info</h2>
-
-<%= form_with model:@book  do |f| %>
-    <h4>Name</h4>
+<h1>User info</h1>
+<%= form_with model:@user  do |f| %>
+  <div>Name</div>
     <%= f.text_field :name %>
-    <h4>Image</h4>
-  <%= f.attachment_field :profile_image %>
-    <h4>introduction</h4>
-    <%= f.submit 'Update User' %>
+  <div>Image</div>
+    <%= f.attachment_field :profile_image %>
+  <div>Introduction</div>
+    <%= f.text_area :introduction %><br>
+  <div>
+    <%= f.submit " Update User" %>
+  </div>
 <% end %>
-
-</div>
