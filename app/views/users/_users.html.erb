@@ -22,6 +22,7 @@
         </tbody>
     </table>
     　<div>
+    　  <%= render 'books/error', model: @book %>
         <%= form_with model:@user  do |f| %>
           <h2>New book</h2>
           <h4>Title</h4>
