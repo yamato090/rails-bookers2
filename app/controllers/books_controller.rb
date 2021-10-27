@@ -16,6 +16,7 @@ class BooksController < ApplicationController
            flash[:notice] = "successfully created"
            redirect_to book_path(@book)
         else
+           @user = current_user
            @books = Book.all
            render :index
         end
@@ -32,7 +33,7 @@ class BooksController < ApplicationController
           redirect_to book_path(@book.id)
         else
         @books = Book.all
-        render :index
+        render :edit
         end
     end
     def destroy
