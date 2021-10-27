@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
+    <div class="col-md-3">
       <%= render 'books/error', model: @book %>
       <%= render 'books/books', book: @book %>
     </div>
 
-    <div class="col-xs-13">
+    <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table table-user-show">
         <tr>
-          <td><%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg"%></td>
+          <td><%= attachment_image_tag @user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg"%></td>
           <td><%= link_to @user.name, user_path(@user) %></td>
           </td>
           <td><%= link_to @book.title %></td>
