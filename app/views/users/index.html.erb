@@ -3,13 +3,13 @@
   <div class="row">
     <%= render 'books/error', model: @user %>
     <div class="col-md-3">
-      <%= render 'users/users', user: @user %>
+      <%= render 'users/users', user: @user,  book: @book %>
 　  </div>
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       <table class="table table-hover table-inverse">
-        <% @users.each do |user| %>
         <thead>
+        <% @users.each do |user| %>
           <tr>
             <td><%= attachment_image_tag user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg",size:'20x20',format: 'no_image.jpg' %></td>
             <th><%= user.name %><th>
