@@ -4,11 +4,13 @@ class BooksController < ApplicationController
        @books = Book.all
        @user = @book.user
        @new_book = Book.new
+       @book_comment = BookComment.new
     end
     def index
        @user = current_user
        @book = Book.new
        @books = Book.all
+       @book_comment = BookComment.new
     end
     def create
         @book = Book.new(book_params)

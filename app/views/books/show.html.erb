@@ -18,8 +18,19 @@
             <td><%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-success" %></td>
             <td><%= link_to "Destroy",book_path(@book), method: :delete, class:"btn btn-danger" %></td>
           <% end %>
+          <tb>コメント数：<%= @book.book_comments.count %></tb>
         </tr>
       </table>
+      <% @book.book_comments.each do |book_comment| %>
+        <div class="profile_image">
+          <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg"%>
+          <%= book_comment.user.name %>
+        </div>
+      <% end %>
+      <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
+        <%= f.text_area :comment, rows:'5' %>
+        <%= f.submit "送信" %>
+      <% end %>
     </div>
   </div>
 </div>
