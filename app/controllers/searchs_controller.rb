@@ -23,12 +23,12 @@ class SearchsController < ApplicationController
       else
         User.where('name LIKE ?', '%'+content+'%')
       end
-      # 選択したモデルがpostだったら
-    elsif model == 'post'
+      # 選択したモデルがbookだったら
+    elsif model == 'book'
       if method == 'perfect'
-        Post.where(title: content)
+        Book.where(title: content)
       elsif
-        Post.where('title LIKE ?', '%'+content+'%')
+        Book.where('title LIKE ?', '%'+content+'%')
       end
     end
   end
