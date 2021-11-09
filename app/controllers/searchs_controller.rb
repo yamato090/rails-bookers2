@@ -11,7 +11,7 @@ class SearchsController < ApplicationController
     # search_forを@recordsに代入。
     @records = search_for(@model, @content, @method)
   end
-  
+
   private
   def search_for(model, content, method)
     # 選択したモデルがuserだったら
@@ -27,7 +27,7 @@ class SearchsController < ApplicationController
     elsif model == 'book'
       if method == 'perfect'
         Book.where(title: content)
-      elsif
+      else
         Book.where('title LIKE ?', '%'+content+'%')
       end
     end
