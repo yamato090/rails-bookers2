@@ -1,24 +1,46 @@
-# README
+# Name（リポジトリ/プロジェクト/OSSなどの名前）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bookers2
 
-Things you may want to cover:
+"hoge"が何かを簡潔に紹介する
 
-* Ruby version
+# DEMO
 
-* System dependencies
+DMM　WEBキャンプ２ヶ月目の課題
 
-* Configuration
+# Features
 
-* Database creation
+・ruby 2.6.3
+・rails 5.2.5
+・HTML5
+・CSS 3
 
-* Database initialization
+# Requirement
 
-* How to run the test suite
+"hoge"を動かすのに必要なライブラリなどを列挙する
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+# Installation
 
-* ...
+Requirementで列挙したライブラリなどのインストール方法を説明する
+
+```bash
+pip install huga_package
+```
+
+# Usage
+
+
+
+# Note
+
+注意点などがあれば書く
+
+# Author
+
+作成情報を列挙する
+
+* 作成者
+* 所属
+* E-mail
+![586235379570b263a56cf520160411](https://user-images.githubusercontent.com/90138524/143571065-fbf9be14-c8d7-4dc7-8d74-b5ff5d0448b9.jpg)
